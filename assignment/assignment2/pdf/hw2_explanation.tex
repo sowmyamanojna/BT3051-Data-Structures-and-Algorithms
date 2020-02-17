@@ -1,0 +1,74 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,right=1.5cm,top=0.5cm,bottom=2cm]{geometry}
+\title{BT 3051 (July-Nov 2019) - Assignment 2}
+\author{Name: N Sowmya Manojna\\Roll Number: BE17B007\\ Collaborators: - \\Time taken: 1.5 days}
+\date{}
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item{
+\begin{enumerate}
+\item {\textbf{The matches made by regular expressions are greedy.}\\
+So, it matches the first half of the `\textbar' condition with the text provided. Once a match is found, it would automatically skip the second half of the `\textbar' condition. In the absence of a match with the first half of the `\textbar' condition, it would match with the second half of the `\textbar' condition. 
+In this case, it matches the `1' with the `1' inside the [129] and hence, skips the second half of the `\textbar' condition. Hence, only '1' gets matched}
+\item{\textbf{The regular expression states matching from the first instance where it finds a match.} In this case, `There.*Zero' begins matching from the first `There' till the last `Zero' in the text provided  - `There are 18 trunks … Zeros'}\end{enumerate}}
+
+\vspace{0.5em}
+
+\item{
+\begin{enumerate}
+\item {$\backslash$b(?!F)$\backslash$w+$\backslash$b} \\
+The regular expression matches all words that doesn't start with a `F'.
+\item {($\backslash$w+(?$<$!c)qu$\backslash$w+)\textbar(Qu$\backslash$w+)} \\
+The regular expression matches all words that either start with a `Qu' or have a `qu' which isn't preceded by a `c'.
+\item {($\backslash$b(I(n\textbar t)i)$\backslash$w+)\textbar($\backslash$w+ini$\backslash$b)} \\
+The regular expression matches all words that either start with an `Ini' or `Iti' or end with an `ini'.
+\item {(?=$\backslash$b$\backslash$d\{4,5\}$\backslash$b)$\backslash$d+ (or) $\backslash$b$\backslash$d\{4,5\}$\backslash$b}\\
+The regular expression matches all 4 or 5 digit numbers.
+\end{enumerate}}
+
+\vspace{0.5em}
+
+\item{
+\begin{enumerate}
+\item {Match: aeiou, acedious, azeyixowuv, abecdieofug \\
+Mismatch: try, aioue, assignment, balance
+}\\
+The regular expression matches all words that have `a', `e', `i', `o' and `u', in the same order, with or without other word character inbetween.
+\item {Match: four, more, lettered, words \\
+Mismatch: or, try, 123, ?-*/+
+}\\
+The regular expression matches all words that have four or more word characters.
+\item {Match: 1231234\$, 987259878\$, 0129801250125\$, 1111112\$ \\
+Mismatch: abc\$, 100201\$, 01212012\$, 100858745201\$
+}\\
+The regular expression matches all numbers having a set of 3 digits, followed by an optional number of digits, the initial 3 digits with an additional digit, repeated one or more times at the end.
+\item {Match: you'll, four's, would've, could've\\
+Mismatch: 4, lettered, words, ?
+}\\ 
+The regular expression matches all words having 1 or more word characters, followed by an apostrophe and 1 or more word characters.
+\item {Match: 1234123121\$, 9876987989\$, 6543654656\$, 4561456454\$ \\
+Mismatch: alphabets, symbols, 12345, ?+-*/
+}\\
+The regular expression matches all 10 digit numbers followed by a `\$' symbol. In the number (without the `\$'), the digits (5,6,7) are the digits (1,2,3) of the number, digits (8,9) are the digits (1,2) of the number and the digit 10 is the digit 1 of the number.
+\end{enumerate}}
+
+\break
+
+\vspace{5em}
+\item{
+\begin{enumerate}
+\item {$\backslash$b($\backslash$+\textbar$\backslash$-\textbar  )$\backslash$d+(($\backslash$.$\backslash$d+)\textbar($\backslash$/$\backslash$d+)\textbar (d*))$\backslash$b}
+\item { The answer below checks for 30, 31 day variations and leap years in case of February. \\
+$\backslash$b(((0[13578])\textbar(1[02]))([$\backslash$/$\backslash$.$\backslash$\_])((0[1-9])\textbar([12][0-9])\textbar(3[01]))$\backslash$5((0$\backslash$d\{2\}[1-9])\textbar([1-9]$\backslash$d\{3\})))\textbar\\(((0[469])\textbar(11))([$\backslash$/$\backslash$.$\backslash$\_])((0[1-9])\textbar([12][0-9])\textbar(31))$\backslash$17((0$\backslash$d\{2\}[1-9])\textbar([1-9]$\backslash$d\{3\})))\textbar\\(02([$\backslash$/$\backslash$.$\backslash$\_])(((0[1-9])\textbar([12][0-9]))$\backslash$26($\backslash$d\{2\}((04)\textbar(08)\textbar(12)\textbar(16)\textbar(20)\textbar(24)\textbar(28)\textbar(32)\textbar(36)\textbar(40)\textbar(44)\\\textbar(48)\textbar(52)\textbar(56)\textbar(60)\textbar(64)\textbar(68)\textbar(72)\textbar(76)\textbar(80)\textbar(84)\textbar(88)\textbar(92)\textbar(96))\textbar(((04)\textbar(08)\textbar(12)\textbar(16)\textbar(20)\textbar(24)\textbar\\(28)\textbar(32)\textbar(36)\textbar(40)\textbar(44)\textbar(48)\textbar(52)\textbar(56)\textbar(60)\textbar(64)\textbar(68)\textbar(72)\textbar(76)\textbar(80)\textbar(84)\textbar(88)\textbar(92)\textbar(96))00)))\textbar\\((((0[1-9])\textbar([12][0-8]))$\backslash$1((0$\backslash$d\{2\}[1-9])\textbar([1-9]$\backslash$d\{3\})))))$\backslash$b}
+\item {(?$<$!($\backslash$/$\backslash$/)\textbar($\backslash$.))$\backslash$b[$\backslash$w$\backslash$d\_]+$\backslash$.[$\backslash$w$\backslash$d\_]+\$ (or) \\
+(?$<$!($\backslash$/$\backslash$/)\textbar($\backslash$.))$\backslash$b[\string^$\backslash${$\backslash$}{$\backslash$}/?\%*:$\backslash$\textbar"$<>$]+[\string^{} ]$\backslash$.[$\backslash$w$\backslash$d\_]+\$}
+\item {ATG([ACTG]\{3\})*((TAA)\textbar(TAG)\textbar(TGA))}
+\item{ AUG([ACUG]\{3\})*?((UAA)\textbar(UAG)\textbar(UGA))}
+\item {(?=.*[A-Z])(?=.*[a-z])(?=.*$\backslash$d)(?=.*[\char`\~{}!\#\$\%\string^{}\&()$\backslash$-\_+$<>$?,])[A-Za-z$\backslash$d\char`\~{}!\#\$\%\string^{}\&()$\backslash$-\_+$<>$?,]\{7,15\}}
+\end{enumerate}}
+
+\end{enumerate}
+\end{document}
