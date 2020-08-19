@@ -1,4 +1,4 @@
-# BT3051-Data-Structures-and-Algorithms  
+# BT3051 Data Structures and Algorithms (July-Nov 2019)
 
 This repository contains all material related to the course BT3051 (Data Structures and Algorithms in Biology).  
   
